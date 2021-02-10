@@ -34,7 +34,7 @@
             <div class="form__input">
                 <input 
                 class="input" 
-                type="text"
+                type="password"
                 v-model="password"
                 >
             </div>
@@ -92,6 +92,25 @@ export default {
        this.$v.$touch()
        return 
      }
+     this.$store.dispatch('getUsers')
+     let data = localStorage.getItem('data')
+     let  users = JSON.parse(data)
+      for(let user of users){
+        if (user.login == this.login && user.password == this.password ){
+          console.log('верно')
+          localStorage.clear()
+          localStorage.setItem('user', JSON.stringify(user))
+
+          this.$router.push('/')
+        
+
+        
+          
+        }
+      }
+
+
+    
     
 
     }
