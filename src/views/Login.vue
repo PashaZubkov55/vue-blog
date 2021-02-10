@@ -98,7 +98,6 @@ export default {
       for(let user of users){
         if (user.login == this.login && user.password == this.password ){
           console.log('верно')
-          localStorage.clear()
           localStorage.setItem('user', JSON.stringify(user))
 
           this.$router.push('/')
