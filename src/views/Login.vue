@@ -92,15 +92,17 @@ export default {
        this.$v.$touch()
        return 
      }
-     this.$store.dispatch('getUsers')
+    
      let data = localStorage.getItem('data')
      let  users = JSON.parse(data)
       for(let user of users){
         if (user.login == this.login && user.password == this.password ){
           console.log('верно')
           localStorage.setItem('user', JSON.stringify(user))
-
-          this.$router.push('/')
+          this.$store.commit('login', true)
+          this.$router.push('/profile')
+          console.log(this.$store.getters.login)
+    
         
 
         
@@ -113,7 +115,11 @@ export default {
     
 
     }
-     }
+     },
+     mounted(){
+   this.$store.dispatch('getUsers')
+}
+      
   }
 
 

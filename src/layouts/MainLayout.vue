@@ -14,8 +14,13 @@
                 <div class="header__right">
                 <nav class="header__menu menu">
                     <ul class="menu__items">
-                        <li class="menu__item">Вход</li>
-                        <li class="menu__item">Регистрация</li>
+                    <li
+                    v-for="link of links"
+                    :key="link.name"
+                    class="menu__item"
+                    @click="link.path"
+                    >{{link.name}}
+                    </li>
                     </ul>
                 </nav>
                 </div>
@@ -24,3 +29,80 @@
          <router-view />
 </div>
 </template>
+<script>
+export default {
+   data (){
+       return{
+           menu:[
+                {
+                   name:'Мой профиль',
+                    path: ()=>{
+                                this.$router.push('/profile')
+                            }
+               },
+               {
+                            name: 'Выход',
+                             path: ()=>{
+                                localStorage.clear()
+                                this.$router.push('/')
+                            }
+               }
+
+           ]
+       }
+   },
+   computed:{
+        login(){
+          return this.$store.getters.login
+        },
+       links(){
+
+           if (this.login == true) {
+                return  this.menu =[
+                {
+                   name:'Профиль',
+                    path: ()=>{
+                                this.$router.push('/profile')
+                            }
+               },
+               {
+                            name: 'Выход',
+                             path: ()=>{
+                                 this.$store.commit('login', false)
+                                 localStorage.clear()
+                                this.$router.push('/')
+                            }
+               }
+
+           ]
+           } else{
+                return  this.menu = [
+                {
+                   name:'Войти ',
+                    path: ()=>{
+            
+                                this.$router.push('/login')
+                            }
+               },
+               {
+                            name: 'Регистрацыя',
+                             path: ()=>{
+                            localStorage.clear()
+                              this.$router.push('/registration')
+
+                            }
+               }
+
+           ]
+
+           }
+            
+          
+       },
+      
+
+   }
+   
+    
+}
+</script>

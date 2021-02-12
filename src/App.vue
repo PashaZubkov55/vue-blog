@@ -24,8 +24,11 @@ export default {
   components:{
     EmptyLayout,
     MainLayout,
-  }
+  },
+ 
+
 }
+
 </script>
 <style>
 @import './assets/style.css';
