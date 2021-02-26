@@ -4,14 +4,17 @@
                         <div class="cardts">
                             <div class="carrds__items">
                             <div class="cardts__item">
-                                <div class="person">
-                                    <div class="person__item person__item_name">Имя</div>
-                                    <div class="person__item">login</div>
-                                    <div class="person__item">password</div>
-                                   <div class="person__item person__item_btn">
+                                <div class="person"
+                                >
+                                    <div class="person__item person__item_name">{{user.name}}</div>
+                                    <div class="person__item">{{user.login}}</div>
+                                    <div class="person__item">{{user.password}}</div>
+                                  
+                                </div>
+                                 <div class="person__item person__item_btn">
                                     <button class="btn btn_succes">Изменить</button>
                                    </div>
-                                </div>
+                                
                             </div>
                             <div class="cardts__item">
                                 <div class="person">
@@ -26,3 +29,28 @@
             </div>
             </div>
 </template>
+<script>
+export default {
+    computed:{
+        user(){
+         return this.$store.getters.userData
+
+        }
+        
+    },
+    methods:{
+        setUser(){
+            this.$store.commit('setUser', localStorage.getItem('user'))
+        
+        }
+    },
+
+     mounted(){
+        this.setUser()
+        console.log(this.userData)
+
+
+         
+}
+}
+</script>

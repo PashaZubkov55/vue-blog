@@ -28,8 +28,17 @@ const routes = [
     name: 'profile',
     meta: {layout: 'main'},
     component: ()=> import('../views/Profile.vue')
+  },
+  {
+    path:'/newArticle/:name',
+    props: true,
+    name: 'newArticle',
+    meta: {layout: 'main'},
+    component: ()=> import('../views/NewArticle.vue')
+
   }
 ]
+
 
 const router = new VueRouter({
   mode: 'history',

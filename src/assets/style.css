@@ -126,3 +126,12 @@
   font-size: 20px;
   margin-top: 15px;
 }
+.form__area{
+  margin-top: 20px;
+
+}
+.area{
+  width: 250px;
+  height: 50px;
+  padding: 10px
+}

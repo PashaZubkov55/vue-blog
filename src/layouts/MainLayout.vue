@@ -26,7 +26,8 @@
                 </div>
             </div>
         </header>
-         <router-view />
+        <router-view />
+
 </div>
 </template>
 <script>
@@ -52,6 +53,10 @@ export default {
        }
    },
    computed:{
+        user(){
+         return this.$store.getters.userData
+
+        },
         login(){
           return this.$store.getters.login
         },
@@ -65,6 +70,13 @@ export default {
                                 this.$router.push('/profile')
                             }
                },
+                {
+                            name: 'Создать статью',
+                             path: ()=>{
+                                
+                                this.$router.push(`/newArticle/${this.user.name}`)
+                            }
+               },
                {
                             name: 'Выход',
                              path: ()=>{
@@ -73,6 +85,8 @@ export default {
                                 this.$router.push('/')
                             }
                }
+               
+
 
            ]
            } else{

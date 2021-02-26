@@ -2,22 +2,24 @@
 import Vue from 'vue'
 export default {
     state: {
+        user: {},
         users:[],
         login: false
 
     },
     getters:{
-            users(state){
-                 return state.users
-            },
+        userData(state){
+          return  state.user
+        },
 
         login(state){
             return state.login
         }
     },
     mutations: {
-        changeUser(state,payload){
-            state.users.push(payload)
+        setUser(state, payload){
+            const  user = payload
+            state.user = JSON.parse(user)
         },
 
         login(state, payload){

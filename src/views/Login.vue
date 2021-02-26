@@ -72,7 +72,7 @@
 </template>
 
 <script>
- import { email, required, minLength  } from 'vuelidate/lib/validators';
+ import {  required, minLength  } from 'vuelidate/lib/validators';
 export default {
   name :'login',
   data: () => ({
@@ -101,12 +101,7 @@ export default {
           localStorage.setItem('user', JSON.stringify(user))
           this.$store.commit('login', true)
           this.$router.push('/profile')
-          console.log(this.$store.getters.login)
-    
-        
-
-        
-          
+          console.log(this.$store.getters.login)      
         }
       }
 
