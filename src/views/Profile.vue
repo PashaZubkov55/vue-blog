@@ -47,7 +47,6 @@ export default {
 
      mounted(){
         this.setUser()
-        console.log(this.userData)
 
 
          

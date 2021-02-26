@@ -100,7 +100,7 @@ export default {
           console.log('верно')
           localStorage.setItem('user', JSON.stringify(user))
           this.$store.commit('login', true)
-          this.$router.push('/profile')
+          this.$router.push({name:'home'})
           console.log(this.$store.getters.login)      
         }
       }
