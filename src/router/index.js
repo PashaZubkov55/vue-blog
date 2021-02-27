@@ -36,6 +36,14 @@ const routes = [
     meta: {layout: 'main'},
     component: ()=> import('../views/NewArticle.vue')
 
+  },
+  {
+    path:'/article/:id',
+    props: true,
+    name: 'article',
+    meta: {layout: 'main'},
+    component: ()=> import('../views/Article.vue')
+
   }
 ]
 

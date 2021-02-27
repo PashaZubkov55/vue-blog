@@ -3,9 +3,6 @@
             <div class="content__wrapper">
                 <div class="articles">
                     <div class="articles__items">
-                        
-                    
-                    
                         <div class="articles__item"
                             v-for="article of articles"
                             :key="article.id"
@@ -17,7 +14,13 @@
                                         <img  class='article-img' src="../assets/img/logo.png" alt="article">
                                     </div>
                                     <div class="article__footer">
-                                        <button class=" btn btn_succes">Подробнее</button>
+                                       <router-link
+                                        tag="button"
+                                        class="btn btn_succes"
+                                        :to="'/article/'+article.id"
+                                       >
+                                           подробнее
+                                       </router-link>
                                 </div>
                                 </div>
                             </div>

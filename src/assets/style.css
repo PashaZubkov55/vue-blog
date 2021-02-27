@@ -1,3 +1,11 @@
+article__wrapper > div {
+  margin-top: 20px;
+}
+.article__text {
+  text-align: left;
+  font-size: 25px;
+}
+
 .articles__item {
   margin-bottom: 30px;
 }
@@ -16,7 +24,7 @@
   text-align: center;
 }
 .article__footer {
-  text-align: center;
+  text-align: left;
   padding-top: 10px;
 }
 .article__footer > .btn {
@@ -48,6 +56,14 @@
 }
 .btn:hover {
   cursor: pointer;
+}
+.form__area {
+  margin-top: 20px;
+}
+.area {
+  width: 250px;
+  height: 50px;
+  padding: 10px;
 }
 
 .content__form {
@@ -126,12 +142,6 @@
   font-size: 20px;
   margin-top: 15px;
 }
-.form__area{
+.article__wrapper>div{
   margin-top: 20px;
-
-}
-.area{
-  width: 250px;
-  height: 50px;
-  padding: 10px
 }

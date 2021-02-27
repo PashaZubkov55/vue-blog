@@ -6,13 +6,25 @@ export default {
     getters: {
         articles(state){
             return state.articles
+        },
+        articleBiId(state){
+            return articleId => {
+                return state.articles.find(
+                    (article)=> {
+                        if(article.id == articleId){
+                            return article
+                        }
+                    }
+                    )
+            }
         }
+        
 
-    },
+        },
     mutations:{
         getArticles(state, payload){
             state.articles = payload
-        }
+        },
 
     },
     actions:{
@@ -32,4 +44,4 @@ export default {
 
 
     }
-}
+ }
