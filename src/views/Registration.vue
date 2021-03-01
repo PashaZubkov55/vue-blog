@@ -111,6 +111,7 @@ export default {
                 password: this.password
             }
            this.$store.dispatch('setUser', user)
+           this.$router.push({name: 'home'})
             
         }
     }

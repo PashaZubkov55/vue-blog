@@ -11,6 +11,18 @@
       "login": "kolya",
       "password": "kolya555",
       "id": 2
+    },
+    {
+      "name": "слава",
+      "login": "slav55",
+      "password": "12346789",
+      "id": 3
+    },
+    {
+      "name": "слава",
+      "login": "slav55",
+      "password": "12345678",
+      "id": 4
     }
   ],
   "articles": [

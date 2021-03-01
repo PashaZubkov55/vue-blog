@@ -1,4 +1,4 @@
-article__wrapper > div {
+.article__wrapper > div {
   margin-top: 20px;
 }
 .article__text {
@@ -132,16 +132,17 @@ article__wrapper > div {
   cursor: pointer;
 }
 
-
-.cardts__item {
-  margin-top: 30px;
-  padding: 50px 300px;
-  background-color: #D3D3D3;
+.content__wrapper_profile{
+  display: flex;
+  justify-content: space-around;
 }
-.person__item {
-  font-size: 20px;
-  margin-top: 15px;
+.person__wrapper {
+  background-color: #F5F5F5;
+  padding: 20px 200px 30px 10px;
 }
-.article__wrapper>div{
+.person__wrapper > div {
   margin-top: 20px;
+}
+.person {
+  font-size: 20px;
 }
