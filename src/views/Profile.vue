@@ -28,7 +28,10 @@
                                     </div>
                                     <div class="article__footer">
                                         <button class=" btn btn_succes">Подробнее</button>
-                                        <button class=" btn  btn_error">Удалить</button>
+                                        <button 
+                                        class=" btn  btn_error"
+                                        @click="deleteArticle(article)"
+                                        >Удалить</button>
                                 </div>
                                 </div>
                             </div>
@@ -62,7 +65,10 @@ export default {
     methods:{
         setUser(){
             this.$store.commit('setUser', localStorage.getItem('user'))
-        
+        }, 
+        deleteArticle(payload){
+            this.$store.dispatch('deleteArticle',payload)
+            this.$router.push({name: 'home'})
         }
     },
 

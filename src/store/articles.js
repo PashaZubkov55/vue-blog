@@ -39,7 +39,11 @@ export default {
             }).then(articles=>{
                 commit('getArticles', articles)
             })
-        }
+        },
+        deleteArticle( copntext ,payload){
+            Vue.http.delete(`http://localhost:3000/articles/${payload.id}`,payload)
+            
+        },
 
 
 
