@@ -44,6 +44,13 @@ const routes = [
     meta: {layout: 'main'},
     component: ()=> import('../views/Article.vue')
 
+  },
+  {
+    path: '/apdateArticle/:id/:author/:title/:text',
+    props: true,
+    name: 'apdateArticle',
+    meta: {layout: 'main'},
+    component: ()=> import('../views/ApdateArticle.vue')
   }
 ]
 

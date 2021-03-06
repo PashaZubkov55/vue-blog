@@ -9,9 +9,6 @@ Vue.config.productionTip = false
 Vue.use(vuelidate)
 Vue.use(VueResource)
 
-
-
-
 new Vue({
   router,
   store,

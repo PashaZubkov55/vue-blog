@@ -41,9 +41,13 @@ export default {
             })
         },
         deleteArticle( copntext ,payload){
-            Vue.http.delete(`http://localhost:3000/articles/${payload.id}`,payload)
-            
+            Vue.http.delete(`http://localhost:3000/articles/${payload.id}`,payload)    
         },
+
+        apdateArticle(context, payload){
+            Vue.http.put(`http://localhost:3000/articles/${payload.id}`, payload)
+        }
+
 
 
 

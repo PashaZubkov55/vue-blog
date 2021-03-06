@@ -32,6 +32,11 @@
                                         class=" btn  btn_error"
                                         @click="deleteArticle(article)"
                                         >Удалить</button>
+                                        <button 
+                                        class=" btn  btn_succes"
+                                        @click="apdate(article)"
+                                        >Изменить</button>
+
                                 </div>
                                 </div>
                             </div>
@@ -69,6 +74,9 @@ export default {
         deleteArticle(payload){
             this.$store.dispatch('deleteArticle',payload)
             this.$router.push({name: 'home'})
+        },
+        apdate(article){
+            this.$router.push({name: 'apdateArticle', params: {id: article.id, author: article.author, title: article.title, text: article.text}})
         }
     },
 
