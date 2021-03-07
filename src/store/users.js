@@ -2,17 +2,28 @@
 import Vue from 'vue'
 export default {
     state: {
-        users:[]
+        user: {},
+        users:[],
+        login: false
 
     },
     getters:{
-            users(state){
-                 return state.users
-            }
+        userData(state){
+          return  state.user
+        },
+
+        login(state){
+            return state.login
+        }
     },
     mutations: {
-        changeUser(state,payload){
-            state.users.push(payload)
+        setUser(state, payload){
+            const  user = payload
+            state.user = JSON.parse(user)
+        },
+
+        login(state, payload){
+                 state.login = payload
         }
   
     },
@@ -20,7 +31,20 @@ export default {
       async  setUser(context, payload){
            await Vue.http.post('http://localhost:3000/users', payload)
         
+         },
+         getUsers(context,){
+             Vue.http.get('http://localhost:3000/users')
+             .then((res)=>{
+                return res.json()
+             })
+             .then(data=>{
+                localStorage.setItem('data', JSON.stringify(data))
+             })
          }
+            
 
+
+
+
+        }
     }
-}

@@ -34,7 +34,7 @@
             <div class="form__input">
                 <input 
                 class="input" 
-                type="text"
+                type="password"
                 v-model="password"
                 >
             </div>
@@ -72,7 +72,7 @@
 </template>
 
 <script>
- import { email, required, minLength  } from 'vuelidate/lib/validators';
+ import {  required, minLength  } from 'vuelidate/lib/validators';
 export default {
   name :'login',
   data: () => ({
@@ -93,9 +93,28 @@ export default {
        return 
      }
     
+     let data = localStorage.getItem('data')
+     let  users = JSON.parse(data)
+      for(let user of users){
+        if (user.login == this.login && user.password == this.password ){
+          console.log('верно')
+          localStorage.setItem('user', JSON.stringify(user))
+          this.$store.commit('login', true)
+          this.$router.push({name:'home'})
+          console.log(this.$store.getters.login)      
+        }
+      }
+
+
+    
+    
 
     }
-     }
+     },
+     mounted(){
+   this.$store.dispatch('getUsers')
+}
+      
   }
 
 
