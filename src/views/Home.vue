@@ -35,23 +35,11 @@
 
 export default {
   name: 'Home',
-  methods:{
-      getArticles(){
-          this.$store.dispatch('getArticles')
-    
-      }
-  },
   computed:{
       articles(){
           return this.$store.getters.articles
       }
       
-  },
-  mounted(){
-      this.getArticles()
-
-    
   }
-
 }
 </script>
